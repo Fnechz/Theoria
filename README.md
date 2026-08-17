@@ -2,7 +2,7 @@
 
 Offline math and science reasoning assistant for **ADTC 2026 — The Laptop LLM Challenge**.
 
-Theoria runs entirely on-device using **llama.cpp** + **Theoria-v3 (Qwen3-1.7B Q4_K_M)**, with an intent-aware pipeline, **SymPy** symbolic verification, **local RAG** over curated math corpora and user-attached PDFs, and a fully offline web UI with KaTeX typesetting, token streaming, and chiShona localization.
+Theoria runs entirely on-device using **llama.cpp** + **Theoria-v3**, with an intent-aware pipeline, **SymPy** symbolic verification, **local RAG** over curated math corpora and user-attached PDFs, and a fully offline web UI with KaTeX typesetting, token streaming, and chiShona localization.
 
 ## Quick Start
 
