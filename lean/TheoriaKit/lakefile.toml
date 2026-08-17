@@ -1,0 +1,5 @@
+name = "TheoriaKit"
+defaultTargets = ["TheoriaKit"]
+
+[[lean_lib]]
+name = "TheoriaKit"

@@ -1,0 +1,36 @@
+# Model weights — never commit these to git (ADTC template requirement)
+model/
+*.gguf
+*.bin
+*.safetensors
+*.partial
+
+# Keep an empty model directory in git for download_model.sh
+!model/.gitkeep
+
+
+# RAG database and caches
+rag/*.db
+data/*.db
+*.db-journal
+
+# macOS
+.DS_Store
+
+# Python
+__pycache__/
+*.pyc
+.venv/
+venv/
+*.egg-info/
+dist/
+build/
+
+# Local profiler output
+submission.json
+audit.json
+verdict.json
+
+# llama.cpp — cloned/built by scripts/build_llama.sh (do not vendor 1GB+ tree)
+inference/llama.cpp/
+

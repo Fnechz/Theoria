@@ -1,0 +1,12 @@
+fastapi>=0.115.0
+uvicorn[standard]>=0.32.0
+sympy>=1.14
+numpy>=1.25
+scipy>=1.10
+sentence-transformers>=2.2.0
+huggingface-hub>=0.26.0
+pymupdf
+rapidocr
+onnxruntime
+pillow>=1.24
+python-multipart>=0.0.9

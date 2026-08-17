@@ -1,0 +1,42 @@
+[
+  {
+    "source": "calculus",
+    "text": "Mean Value Theorem: If f is continuous on [a, b] and differentiable on (a, b), then there exists c in (a, b) such that f'(c) = (f(b) - f(a)) / (b - a)."
+  },
+  {
+    "source": "calculus",
+    "text": "Chain rule: The derivative of f(g(x)) is f'(g(x)) * g'(x). Example: d/dx sin(x^2) = cos(x^2) * 2x."
+  },
+  {
+    "source": "algebra",
+    "text": "Quadratic formula: For ax^2 + bx + c = 0 with a != 0, solutions are x = (-b ± sqrt(b^2 - 4ac)) / (2a)."
+  },
+  {
+    "source": "algebra",
+    "text": "Factoring x^2 - 5x + 6: find two numbers that multiply to 6 and add to -5, namely -2 and -3. So x^2 - 5x + 6 = (x - 2)(x - 3)."
+  },
+  {
+    "source": "trigonometry",
+    "text": "Derivative of sin(x) is cos(x). Derivative of cos(x) is -sin(x). Derivative of tan(x) is sec^2(x)."
+  },
+  {
+    "source": "physics",
+    "text": "Kinematics: acceleration a = (v - u) / t where v is final velocity, u is initial velocity, and t is time. Example: v=10 m/s, u=0, t=2 s gives a = 5 m/s^2."
+  },
+  {
+    "source": "physics",
+    "text": "Newton's second law: F = ma, force equals mass times acceleration."
+  },
+  {
+    "source": "geometry",
+    "text": "Sum of interior angles in a triangle is 180 degrees (pi radians)."
+  },
+  {
+    "source": "calculus",
+    "text": "Integral of e^x dx = e^x + C. Integral of sin(x) dx = -cos(x) + C."
+  },
+  {
+    "source": "algebra",
+    "text": "Euler's identity: e^(i*pi) + 1 = 0, connecting exponential, imaginary unit, and pi."
+  }
+]

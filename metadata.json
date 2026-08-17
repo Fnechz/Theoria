@@ -1,0 +1,37 @@
+{
+  "team_id": "theoria",
+  "domain": "math_scientific_reasoning",
+  "language_scope": ["en"],
+  "african_alpha_claim": false,
+  "budget_laptop_claim": true,
+  "submitter": {
+    "name": "Farai Nechikwira",
+    "email": "fnechz@gmail.com",
+    "github_handle": "Fnechz"
+  },
+  "cross_disciplinary_pairing": {
+    "discipline": "symbolic_mathematics",
+    "load_bearing": true,
+    "description": "Theoria pairs the language model with SymPy symbolic computation as a verification layer: math queries are solved exactly by SymPy in parallel, the verified result is injected into the prompt as a constraint the model's answer must agree with, and the UI displays it as a verification badge. SymPy also serves as an instant fallback, so a math answer is always available even if inference fails."
+  },
+  "test_prompts": [
+    {
+      "prompt_id": "tp_001",
+      "prompt": "Solve the quadratic equation x^2 - 5x + 6 = 0 and explain each step."
+    },
+    {
+      "prompt_id": "tp_002",
+      "prompt": "State and prove Fermat's Little Theorem: if p is prime and a is an integer not divisible by p, then a^(p-1) ≡ 1 (mod p). Give a clear elementary proof."
+    }
+  ],
+  "model": {
+    "name": "Theoria-v3-Qwen3-1.7B-Q4_K_M",
+    "runtime": "llama.cpp",
+    "quantization": "GGUF Q4_K_M",
+    "parameters_estimate": "1.7B",
+    "packaging": "binary_bundle"
+  },
+  "_runtime": {
+    "model_path": "model/theoria-v3-q4_k_m.gguf"
+  }
+}
