@@ -30,9 +30,13 @@ CHITCHAT_INSTRUCTIONS = (
 
 PROOF_INSTRUCTIONS = (
     "Write a clear, rigorous step-by-step proof: state what is given, what "
-    "must be shown, and justify every step. If the statement is simple "
-    "arithmetic or logic, also include a Lean 4 formalization in a ```lean "
-    "code block using only core tactics (rfl, simp, decide, omega, induction)."
+    "must be shown, and justify every step. Do not include Lean or other "
+    "formal code unless the user explicitly asks for a Lean formalization."
+)
+
+LEAN_ON_REQUEST = (
+    "Also include a Lean 4 formalization in a ```lean code block using only "
+    "core tactics (rfl, simp, decide, omega, induction)."
 )
 
 # The base model drifts into Lean 3 syntax (begin/end, nat.*); a few canonical
@@ -96,6 +100,25 @@ def is_sorry_request(query: str) -> bool:
     return "sorry" in q and ("theorem" in q or "lean" in q or "```" in q)
 
 
+def wants_lean(query: str) -> bool:
+    """True when the user explicitly asked for Lean / formalization."""
+    q = query.lower()
+    return any(
+        cue in q
+        for cue in (
+            "lean",
+            "formalize",
+            "formalise",
+            "formalization",
+            "formalisation",
+            "```lean",
+            "theoriakit",
+            "fill the sorry",
+            "fill sorry",
+        )
+    )
+
+
 def build_messages(
     query: str,
     intent: Intent = Intent.MATH,
@@ -118,9 +141,12 @@ def build_messages(
     elif intent == Intent.PROVE:
         if is_sorry_request(query):
             system_parts.append(SORRY_INSTRUCTIONS)
+            system_parts.append(LEAN4_FEWSHOT)
         else:
             system_parts.append(PROOF_INSTRUCTIONS)
-        system_parts.append(LEAN4_FEWSHOT)
+            if wants_lean(query):
+                system_parts.append(LEAN_ON_REQUEST)
+                system_parts.append(LEAN4_FEWSHOT)
     elif intent == Intent.REFUTE:
         system_parts.append(REFUTE_INSTRUCTIONS)
     else:
